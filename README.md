@@ -11,7 +11,9 @@ Bsi format is like string-patch on the elder of Ethornell games, it contains som
 2. Print "0", if thou want to convert to txt, or "1", if thou want to convert txt back to bsi.
 3. Print filename **(with extension!!!)**
 4. Just wait until it done.
-===
+
+
+
 1. Запустите средство.
 2. Введите "0", коли конвертировать в текстовый формат желаете, али "1", коли его обратно в .bsi конвертировать желаете.
 3. Введите имя файла **(с расширением!!!)**
