@@ -35,11 +35,10 @@ if (Mode == 0):
                         pass
                     if (truth == 1):
                         try:
-                            if (Bytes[Ukaz:Neo] == b'\x0d'):
-                                raise Exception("Костыль!")
-                            OutFile.write(Bytes[Ukaz:Neo].decode('utf-8'))
+                            test = Bytes[Ukaz:Neo].decode('utf-8')
+                            OutFile.write(test)
                         except:
-                            OutFile.write("@" + str(Bytes[Ukaz:Neo])[2:-1])
+                            OutFile.write("@" + Bytes[Ukaz:Neo].hex(' '))
                     OutFile.write('\n#\n')
                     Ukaz = Neo+1
                     pass
@@ -76,10 +75,7 @@ else:
                 ifer = True
                 try:
                     if (down[0] == '@'):
-                        if (down[2:-1] == 'r'):
-                            down = '0D'
-                        else:
-                            down = down[3:-1]
+                        down = down[1:]
                         OutFile.write(bytearray.fromhex(down))
                         ifer = False
                 except:
