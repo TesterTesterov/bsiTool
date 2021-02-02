@@ -1,4 +1,22 @@
 import sys
+test_flag = False
+
+if (test_flag):
+    zlo = open("en._bsi", 'rb')
+    dobro = open("en_._bsi", 'rb')
+    one = zlo.read(1)
+    two = dobro.read(1)
+    count = 0
+    while ((one != b'') and (two != b'')):
+        if (one != two):
+            print(count)
+            break
+        one = zlo.read(1)
+        two = dobro.read(1)
+        count += 1
+    zlo.close()
+    dobro.close()
+    exit()
 
 String = ''
 Mode = 0
@@ -39,7 +57,7 @@ if (Mode == 0):
                             OutFile.write(test)
                         except:
                             OutFile.write("@" + Bytes[Ukaz:Neo].hex(' '))
-                    OutFile.write('\n#\n')
+                    OutFile.write('\n###SEP###\n')
                     Ukaz = Neo+1
                     pass
                 Neo += 1
@@ -71,7 +89,7 @@ else:
         while (linenum < len(lines)):
             line = lines[linenum]
 
-            if (line == '#\n'):
+            if (line == '###SEP###\n'):
                 ifer = True
                 try:
                     if (down[0] == '@'):
